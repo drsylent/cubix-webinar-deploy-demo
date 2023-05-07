@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: webinar-api
+    release: webinar
+  name: webinar-api
+spec:
+  rules:
+    - host: application.cubix.localhost
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: webinar-api
+                port:
+                  number: 8080

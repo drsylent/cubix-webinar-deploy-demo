@@ -1,0 +1,14 @@
+name: Deploy to local Kind cluster
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Helm deployment
+        run: |
+          helm dependency update helm/webinar
+          helm upgrade --install webinar helm/webinar -n webinar

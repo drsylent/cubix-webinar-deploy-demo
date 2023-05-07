@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+    - "webinar:/var/lib/postgresql/data"
+
+  db:
+    image: ghcr.io/drsylent/cubix/webinar/db:latest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+  
+  api:
+    image: ghcr.io/drsylent/cubix/webinar/api:latest
+    ports:
+    - 8082:8080
+    environment:
+      DB_MESSAGE_URL: http://db:8080
+      
+volumes:
+  webinar:
+    external: true
