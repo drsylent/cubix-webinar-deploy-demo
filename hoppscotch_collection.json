@@ -1,0 +1,206 @@
+[
+  {
+    "v": 1,
+    "name": "Webinar",
+    "folders": [
+      {
+        "v": 1,
+        "name": "Local Dev",
+        "folders": [],
+        "requests": [
+          {
+            "name": "DB: Recent messages (Local)",
+            "endpoint": "http://host.docker.internal:8081/message/recent",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": null,
+              "body": null
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          },
+          {
+            "name": "DB: Create new message (Local)",
+            "endpoint": "http://host.docker.internal:8081/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "text/plain",
+              "body": "Hello to Webinar!"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          },
+          {
+            "name": "API: Webinar Call (Local)",
+            "endpoint": "http://host.docker.internal:8082/webinar/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "application/json",
+              "body": "{\r\n    \"message\": \"Hello from the other application - from Local!\",\r\n    \"leftNumber\": 1,\r\n    \"rightNumber\": 2\r\n}"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          }
+        ]
+      },
+      {
+        "v": 1,
+        "name": "Containerization",
+        "folders": [],
+        "requests": [
+          {
+            "name": "DB: Recent messages (Docker)",
+            "endpoint": "http://host.docker.internal:8081/message/recent",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": null,
+              "body": null
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          },
+          {
+            "name": "DB: Create new message (Docker)",
+            "endpoint": "http://host.docker.internal:8081/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "text/plain",
+              "body": "Hello to Webinar!"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          },
+          {
+            "name": "API: Webinar Call (Docker)",
+            "endpoint": "http://host.docker.internal:8082/webinar/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "application/json",
+              "body": "{\r\n    \"message\": \"Hello from the other application - from Docker!\",\r\n    \"leftNumber\": 1,\r\n    \"rightNumber\": 2\r\n}"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          }
+        ]
+      },
+      {
+        "v": 1,
+        "name": "Compose",
+        "folders": [],
+        "requests": [
+          {
+            "name": "API: Webinar Call (Compose)",
+            "endpoint": "http://host.docker.internal:8082/webinar/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "application/json",
+              "body": "{\r\n    \"message\": \"Hello from the other application - from Compose!\",\r\n    \"leftNumber\": 1,\r\n    \"rightNumber\": 2\r\n}"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          }
+        ]
+      },
+      {
+        "v": 1,
+        "name": "Kubernetes",
+        "folders": [],
+        "requests": [
+          {
+            "name": "API: Webinar Call (K8S)",
+            "endpoint": "http://application.cubix.localhost:8080/webinar/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "application/json",
+              "body": "{\r\n    \"message\": \"Hello from the other application - from Kubernetes!\",\r\n    \"leftNumber\": 1,\r\n    \"rightNumber\": 2\r\n}"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          }
+        ]
+      },
+      {
+        "v": 1,
+        "name": "Helm",
+        "folders": [],
+        "requests": [
+          {
+            "name": "API: Webinar Call (Helm)",
+            "endpoint": "http://application.cubix.localhost:8080/webinar/message",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "auth": {
+              "authType": "none",
+              "authActive": true
+            },
+            "body": {
+              "contentType": "application/json",
+              "body": "{\r\n    \"message\": \"Hello from the other application - from Helm!\",\r\n    \"leftNumber\": 1,\r\n    \"rightNumber\": 2\r\n}"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "v": "1"
+          }
+        ]
+      }
+    ],
+    "requests": []
+  }
+]
