@@ -1,4 +1,4 @@
-docker rm proxyscotch
+docker stop proxyscotch
 
 docker run --name proxyscotch `
     -d --rm -p 9159:9159 `
