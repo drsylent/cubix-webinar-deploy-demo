@@ -33,7 +33,7 @@ spec:
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
           name: persistent-db
-        image: postgres:latest
+        image: postgres:16
         imagePullPolicy: Always
         startupProbe:
           tcpSocket:
