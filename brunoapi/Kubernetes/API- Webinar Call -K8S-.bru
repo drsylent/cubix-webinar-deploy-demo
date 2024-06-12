@@ -1,0 +1,19 @@
+meta {
+  name: API- Webinar Call -K8S-
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://application.cubix.localhost:8080/webinar/message
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "message": "Hello from the other application - from Kubernetes!",
+      "leftNumber": 1,
+      "rightNumber": 2
+  }
+}

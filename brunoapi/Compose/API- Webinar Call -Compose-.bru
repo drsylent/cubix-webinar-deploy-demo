@@ -1,0 +1,19 @@
+meta {
+  name: API- Webinar Call -Compose-
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8082/webinar/message
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "message": "Hello from the other application - from Compose!",
+      "leftNumber": 1,
+      "rightNumber": 2
+  }
+}
