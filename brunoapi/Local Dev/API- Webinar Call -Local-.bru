@@ -1,0 +1,19 @@
+meta {
+  name: API- Webinar Call -Local-
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8082/webinar/message
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "message": "Hello from the other application - from Local!",
+      "leftNumber": 1,
+      "rightNumber": 2
+  }
+}
